@@ -18,7 +18,6 @@ public class MyUI extends UI {
 	}
 }
 ```
-https://github.com/vaadin/tutorial/
 
 ## Button and Notification 
 ```java
