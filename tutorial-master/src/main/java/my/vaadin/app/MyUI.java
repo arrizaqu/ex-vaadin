@@ -34,6 +34,8 @@ public class MyUI extends UI {
     
     private CustomerService service = CustomerService.getInstance();
     private Grid<Customer> grid = new Grid<>(Customer.class);
+    Grid<User> dataGrid = new Grid<User>(User.class);
+    
     private TextField filterText = new TextField();
     private CustomerForm form = new CustomerForm(this);
 
@@ -86,21 +88,18 @@ public class MyUI extends UI {
     	return listUser;
     }
     
-    Grid<User> dataGrid = new Grid<User>();
+   
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         
     	//datatable with grid
-    	
-    	
     	List<User> listUser= this.getAllUser();
     	
     	//layouting
     	VerticalLayout layout = new VerticalLayout();
-    	layout.addComponent(dataGrid);
-    	dataGrid.setItems(listUser);
+    	layout.addComponent(this.dataGrid);
+    	this.dataGrid.setItems(listUser);
     	
-    	//updateList();
     	layout.setMargin(true);
     	layout.setSpacing(true);
     	setContent(layout);
@@ -154,6 +153,11 @@ public class MyUI extends UI {
     public void updateList() {
         List<Customer> customers = service.findAll(filterText.getValue());
         grid.setItems(customers);
+    }
+    
+    public void setDataGrid(){
+    	List<User> listUser = this.getAllUser();
+    	this.dataGrid.setItems(listUser);
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

@@ -1,6 +1,8 @@
 package my.vaadin.app;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable, Cloneable{
 
 	private String id;
 	private String name;
