@@ -94,6 +94,9 @@ public class MyUI extends UI {
         
     	//datatable with grid
     	List<User> listUser= this.getAllUser();
+    
+    	//filter Grid column
+    	this.dataGrid.setColumns("name","address", "jobDesc");
     	
     	//layouting
     	VerticalLayout layout = new VerticalLayout();

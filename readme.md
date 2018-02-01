@@ -5,6 +5,7 @@
 * Button and Notification
 * Layouting and TextField
 * Data populate with Grid
+	* Filter Column
 
 ## Installation 
 ## Hello world 
@@ -120,6 +121,12 @@ protected void init(VaadinRequest vaadinRequest) {
 	layout.setSpacing(true);
 	setContent(layout);
 }
+```
+
+## Filter Column
+```java
+//filter Grid column
+this.dataGrid.setColumns("name","address", "jobDesc");
 ```
 
 ## Reference 
