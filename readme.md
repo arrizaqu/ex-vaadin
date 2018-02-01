@@ -103,7 +103,7 @@ public List<User> getAllUser(){
 
 ## example
 ```java
-private Grid<Customer> grid = new Grid<>(Customer.class);
+Grid<User> dataGrid = new Grid<User>(User.class)
  
 @Override
 protected void init(VaadinRequest vaadinRequest) {
